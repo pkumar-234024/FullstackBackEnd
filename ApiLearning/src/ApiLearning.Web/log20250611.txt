@@ -1,0 +1,256 @@
+2025-06-11 17:44:16.272 +05:30 [INF] Registered 7 endpoints in 1,712 milliseconds.
+2025-06-11 17:44:19.572 +05:30 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-11 17:44:19.781 +05:30 [INF] Executed DbCommand (197ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-11 17:44:20.154 +05:30 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-11 17:44:20.204 +05:30 [INF] User profile is available. Using 'C:\Users\praveen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-11 17:44:20.459 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-11 17:44:20.577 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2025-06-11 17:44:20.667 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-11 17:44:20.667 +05:30 [INF] Hosting environment: Development
+2025-06-11 17:44:20.667 +05:30 [INF] Content root path: D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Web
+2025-06-11 17:44:23.187 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2025-06-11 17:44:23.193 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 2625.4284ms
+2025-06-11 17:44:23.214 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 27.0415ms
+2025-06-11 17:44:23.239 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-11 17:44:23.247 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 7.1553ms
+2025-06-11 17:44:23.312 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2025-06-11 17:44:23.379 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 66.6192ms
+2025-06-11 17:44:23.543 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2025-06-11 17:44:23.656 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 112.4773ms
+2025-06-11 17:44:38.523 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:57678/users/login - application/json 78
+2025-06-11 17:44:38.527 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-11 17:44:38.530 +05:30 [INF] Executing endpoint 'HTTP: POST /users/login'
+2025-06-11 17:44:38.577 +05:30 [INF] Handling LoginUserCommand
+2025-06-11 17:44:38.578 +05:30 [INF] Property _loginUserDto : {"Email":"test@123","Password":"Password@123","RememberMe":false,"$type":"LoginDto"}
+2025-06-11 17:44:38.802 +05:30 [INF] Executed DbCommand (108ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-11 17:44:39.005 +05:30 [INF] Handled LoginUserCommand with Ardalis.Result.Result`1[ApiLearning.Core.AccountAggregate.TokenResponse] in 424 ms
+2025-06-11 17:44:39.024 +05:30 [INF] Executed endpoint 'HTTP: POST /users/login'
+2025-06-11 17:44:39.030 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:57678/users/login - 200 null application/json; charset=utf-8 506.6255ms
+2025-06-11 17:45:14.367 +05:30 [INF] Registered 7 endpoints in 584 milliseconds.
+2025-06-11 17:45:15.720 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-11 17:45:15.795 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-11 17:45:16.117 +05:30 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-11 17:45:16.166 +05:30 [INF] User profile is available. Using 'C:\Users\praveen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-11 17:45:16.308 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-11 17:45:16.356 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2025-06-11 17:45:16.449 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-11 17:45:16.450 +05:30 [INF] Hosting environment: Development
+2025-06-11 17:45:16.450 +05:30 [INF] Content root path: D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Web
+2025-06-11 17:45:16.616 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2025-06-11 17:45:16.632 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 283.0407ms
+2025-06-11 17:45:16.736 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 120.898ms
+2025-06-11 17:45:16.789 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-11 17:45:16.805 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 12.0315ms
+2025-06-11 17:45:16.876 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2025-06-11 17:45:16.912 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 36.5587ms
+2025-06-11 17:45:17.123 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2025-06-11 17:45:17.191 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 68.2212ms
+2025-06-11 17:45:50.109 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:57678/users/login - application/json 78
+2025-06-11 17:45:50.129 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-11 17:45:50.132 +05:30 [INF] Executing endpoint 'HTTP: POST /users/login'
+2025-06-11 17:45:50.188 +05:30 [INF] Handling LoginUserCommand
+2025-06-11 17:45:50.190 +05:30 [INF] Property _loginUserDto : {"Email":"test@123","Password":"Password@123","RememberMe":false,"$type":"LoginDto"}
+2025-06-11 17:46:19.659 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-06-11 17:48:06.472 +05:30 [INF] Handled LoginUserCommand with Ardalis.Result.Result`1[ApiLearning.Core.AccountAggregate.TokenResponse] in 136278 ms
+2025-06-11 17:48:06.483 +05:30 [INF] Executed endpoint 'HTTP: POST /users/login'
+2025-06-11 17:48:06.487 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:57678/users/login - 200 null application/json; charset=utf-8 136378.7576ms
+2025-06-11 17:59:05.505 +05:30 [INF] Registered 7 endpoints in 440 milliseconds.
+2025-06-11 17:59:06.814 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-11 17:59:06.934 +05:30 [INF] Executed DbCommand (111ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-11 17:59:07.252 +05:30 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-11 17:59:07.297 +05:30 [INF] User profile is available. Using 'C:\Users\praveen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-11 17:59:07.424 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-11 17:59:07.475 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2025-06-11 17:59:07.574 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-11 17:59:07.574 +05:30 [INF] Hosting environment: Development
+2025-06-11 17:59:07.574 +05:30 [INF] Content root path: D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Web
+2025-06-11 17:59:07.779 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2025-06-11 17:59:07.787 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 321.8331ms
+2025-06-11 17:59:07.880 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 100.7269ms
+2025-06-11 17:59:08.010 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2025-06-11 17:59:08.010 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-11 17:59:08.015 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 4.7578ms
+2025-06-11 17:59:08.054 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 44.0372ms
+2025-06-11 17:59:08.301 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2025-06-11 17:59:08.368 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 66.8838ms
+2025-06-11 18:01:03.416 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:57678/users/create - application/json 218
+2025-06-11 18:01:03.441 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-11 18:01:03.445 +05:30 [INF] Executing endpoint 'HTTP: POST /users/create'
+2025-06-11 18:01:11.789 +05:30 [INF] Handling CreateUserCommand
+2025-06-11 18:01:11.791 +05:30 [INF] Property _registerUserDto : {"FirstName":"user","LastName":"Name","Email":"test@123","Password":"Password@123","ConfirmPassword":"Password@123","PhoneNumber":"1234567890","Address":"123 Main St","UserRole":"User","$type":"RegisterDto"}
+2025-06-11 18:01:25.810 +05:30 [INF] Executed DbCommand (116ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-11 18:01:34.888 +05:30 [INF] Executed endpoint 'HTTP: POST /users/create'
+2025-06-11 18:01:34.890 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: An error occurred during registration.
+ ---> System.Exception: User creation failed. Errors: Username 'test@123' is already taken.
+   at ApiLearning.Core.Services.AccountService.RegisterAsync(RegisterDto registerDto) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Core\Services\AccountService.cs:line 33
+   --- End of inner exception stack trace ---
+   at ApiLearning.Core.Services.AccountService.RegisterAsync(RegisterDto registerDto) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Core\Services\AccountService.cs:line 50
+   at ApiLearning.UseCases.Accounts.Create.CreateUserHandler.Handle(CreateUserCommand request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.UseCases\Accounts\Create\CreateUserHandler.cs:line 14
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ApiLearning.Web.Account.Create.HandleAsync(RegisterDto request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Web\Account\Create.cs:line 28
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-11 18:01:35.034 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:57678/users/create - 500 null text/plain; charset=utf-8 31619.5072ms
+2025-06-11 18:01:52.137 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:57678/users/create - application/json 218
+2025-06-11 18:01:52.142 +05:30 [INF] Executing endpoint 'HTTP: POST /users/create'
+2025-06-11 18:01:57.220 +05:30 [INF] Handling CreateUserCommand
+2025-06-11 18:01:57.226 +05:30 [INF] Property _registerUserDto : {"FirstName":"user","LastName":"Name","Email":"user@123","Password":"Password@123","ConfirmPassword":"Password@123","PhoneNumber":"1234567890","Address":"123 Main St","UserRole":"User","$type":"RegisterDto"}
+2025-06-11 18:02:01.129 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-11 18:02:01.253 +05:30 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2025-06-11 18:02:14.654 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-06-11 18:02:14.659 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-06-11 18:08:31.974 +05:30 [INF] Executed endpoint 'HTTP: POST /users/create'
+2025-06-11 18:08:31.980 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: An error occurred during registration.
+ ---> System.InvalidOperationException: Role USER does not exist.
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.AddToRoleAsync(TUser user, String normalizedRoleName, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+   at ApiLearning.Core.Services.AccountService.RegisterAsync(RegisterDto registerDto) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Core\Services\AccountService.cs:line 37
+   --- End of inner exception stack trace ---
+   at ApiLearning.Core.Services.AccountService.RegisterAsync(RegisterDto registerDto) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Core\Services\AccountService.cs:line 50
+   at ApiLearning.UseCases.Accounts.Create.CreateUserHandler.Handle(CreateUserCommand request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.UseCases\Accounts\Create\CreateUserHandler.cs:line 14
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ApiLearning.Web.Account.Create.HandleAsync(RegisterDto request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Web\Account\Create.cs:line 28
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-11 18:08:32.010 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:57678/users/create - 500 null text/plain; charset=utf-8 399871.6062ms
+2025-06-11 18:09:14.912 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:57678/users/create - application/json 220
+2025-06-11 18:09:14.921 +05:30 [INF] Executing endpoint 'HTTP: POST /users/create'
+2025-06-11 18:09:17.683 +05:30 [INF] Handling CreateUserCommand
+2025-06-11 18:09:17.683 +05:30 [INF] Property _registerUserDto : {"FirstName":"user1","LastName":"Name","Email":"user1@123","Password":"Password@123","ConfirmPassword":"Password@123","PhoneNumber":"1234567890","Address":"123 Main St","UserRole":"User","$type":"RegisterDto"}
+2025-06-11 18:09:23.891 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-11 18:09:23.900 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2025-06-11 18:09:32.601 +05:30 [INF] Executed DbCommand (17ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-06-11 18:09:32.666 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-06-11 18:09:32.668 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-06-11 18:09:32.687 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-11 18:09:32.738 +05:30 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p16='?' (Size = 450), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p17='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUserRoles] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p2, [ConcurrencyStamp] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+OUTPUT 1
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+2025-06-11 18:09:37.781 +05:30 [INF] Handled CreateUserCommand with Ardalis.Result.Result`1[ApiLearning.Core.AccountAggregate.UserDto] in 20096 ms
+2025-06-11 18:09:44.089 +05:30 [INF] Executed endpoint 'HTTP: POST /users/create'
+2025-06-11 18:09:44.089 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:57678/users/create - 200 null application/json; charset=utf-8 29180.1538ms

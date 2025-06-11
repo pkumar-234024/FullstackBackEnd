@@ -1,0 +1,15 @@
+/ApiLearning/src/ApiLearning.Core/bin
+/ApiLearning/src/ApiLearning.Core/obj
+/ApiLearning/.vs
+/ApiLearning/src/ApiLearning.Infrastructure/bin
+/ApiLearning/src/ApiLearning.Infrastructure/obj
+/ApiLearning/src/ApiLearning.UseCases/bin
+/ApiLearning/src/ApiLearning.UseCases/obj
+/ApiLearning/src/ApiLearning.Web/bin
+/ApiLearning/src/ApiLearning.Web/obj
+/ApiLearning/tests/ApiLearning.FunctionalTests/bin
+/ApiLearning/tests/ApiLearning.FunctionalTests/obj
+/ApiLearning/tests/ApiLearning.IntegrationTests/bin
+/ApiLearning/tests/ApiLearning.IntegrationTests/obj
+/ApiLearning/tests/ApiLearning.UnitTests/bin
+/ApiLearning/tests/ApiLearning.UnitTests/obj

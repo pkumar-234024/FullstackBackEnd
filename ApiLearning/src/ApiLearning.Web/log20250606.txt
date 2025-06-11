@@ -1,0 +1,251 @@
+2025-06-06 19:21:11.564 +05:30 [INF] Registered 6 endpoints in 519 milliseconds.
+2025-06-06 19:21:13.976 +05:30 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-06 19:21:14.107 +05:30 [INF] Executed DbCommand (122ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-06 19:21:14.364 +05:30 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-06 19:21:14.601 +05:30 [INF] Executed DbCommand (97ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (DbType = Int32), @p2='?' (Size = 100), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Contributors] USING (
+VALUES (@p0, @p1, 0),
+(@p2, @p3, 1)) AS i ([Name], [Status], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Name], [Status])
+VALUES (i.[Name], i.[Status])
+OUTPUT INSERTED.[Id], i._Position;
+2025-06-06 19:21:14.653 +05:30 [INF] User profile is available. Using 'C:\Users\praveen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 19:21:18.902 +05:30 [INF] Now listening on: https://localhost:57679
+2025-06-06 19:21:18.908 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-06 19:21:18.965 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 19:21:18.966 +05:30 [INF] Hosting environment: Development
+2025-06-06 19:21:18.967 +05:30 [INF] Content root path: D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Web
+2025-06-06 19:21:51.689 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/ - null null
+2025-06-06 19:21:52.808 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-06 19:21:52.814 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-06 19:21:52.821 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/ - 401 0 null 1136.1557ms
+2025-06-06 19:21:59.906 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-06-06 19:21:59.919 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-06 19:21:59.921 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-06 19:21:59.923 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 401 0 null 17.6428ms
+2025-06-06 19:22:03.127 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-06-06 19:22:03.133 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-06 19:22:03.135 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-06 19:22:03.136 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 401 0 null 8.8555ms
+2025-06-06 19:22:04.449 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-06-06 19:22:04.453 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-06 19:22:04.454 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-06 19:22:04.455 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 401 0 null 6.8205ms
+2025-06-06 19:22:36.189 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-06-06 19:22:36.193 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-06 19:22:36.194 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-06 19:22:36.196 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 401 0 null 6.9659ms
+2025-06-06 19:22:52.488 +05:30 [INF] Registered 6 endpoints in 390 milliseconds.
+2025-06-06 19:22:53.572 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-06 19:22:53.673 +05:30 [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-06 19:22:53.885 +05:30 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-06 19:22:53.926 +05:30 [INF] User profile is available. Using 'C:\Users\praveen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 19:22:59.146 +05:30 [INF] Now listening on: https://localhost:57679
+2025-06-06 19:22:59.151 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-06 19:22:59.202 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 19:22:59.203 +05:30 [INF] Hosting environment: Development
+2025-06-06 19:22:59.204 +05:30 [INF] Content root path: D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Web
+2025-06-06 19:23:10.857 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-06-06 19:23:11.076 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-06 19:23:11.081 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-06 19:23:11.085 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 401 0 null 231.8895ms
+2025-06-06 19:23:11.965 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-06-06 19:23:11.974 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-06 19:23:11.975 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-06 19:23:11.976 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 401 0 null 11.7551ms
+2025-06-06 19:23:12.531 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-06-06 19:23:12.539 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-06 19:23:12.541 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-06 19:23:12.542 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 401 0 null 10.9532ms
+2025-06-06 19:23:12.859 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-06-06 19:23:12.863 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-06 19:23:12.864 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-06 19:23:12.866 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 401 0 null 6.8471ms
+2025-06-06 19:23:13.158 +05:30 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-06-06 19:23:13.164 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-06-06 19:23:13.165 +05:30 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-06 19:23:13.166 +05:30 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 401 0 null 7.7377ms
+2025-06-06 19:30:57.685 +05:30 [INF] Registered 6 endpoints in 754 milliseconds.
+2025-06-06 19:31:00.872 +05:30 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-06 19:31:00.995 +05:30 [INF] Executed DbCommand (113ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-06 19:31:01.353 +05:30 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-06 19:31:01.404 +05:30 [INF] User profile is available. Using 'C:\Users\praveen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 19:31:01.580 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-06 19:31:01.624 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2025-06-06 19:31:01.728 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 19:31:01.728 +05:30 [INF] Hosting environment: Development
+2025-06-06 19:31:01.728 +05:30 [INF] Content root path: D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Web
+2025-06-06 19:31:02.962 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2025-06-06 19:31:02.964 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 1347.3473ms
+2025-06-06 19:31:03.022 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 59.7128ms
+2025-06-06 19:31:03.062 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 19:31:03.068 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 5.004ms
+2025-06-06 19:31:03.152 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2025-06-06 19:31:03.648 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 495.7606ms
+2025-06-06 19:31:04.552 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2025-06-06 19:31:04.669 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 117.1355ms
+2025-06-06 19:32:03.936 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:57678/users/create - application/json 203
+2025-06-06 19:32:03.940 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-06 19:32:03.942 +05:30 [INF] Executing endpoint 'HTTP: POST /users/create'
+2025-06-06 19:32:47.970 +05:30 [INF] Handling CreateUserCommand
+2025-06-06 19:32:47.971 +05:30 [INF] Property _registerUserDto : {"FirstName":"FirstName","LastName":"LastName","Email":"Test@123","Password":"Password123","ConfirmPassword":"Password123","PhoneNumber":"1234567890","Address":"123 Main St","$type":"RegisterDto"}
+2025-06-06 19:33:22.964 +05:30 [INF] Executed endpoint 'HTTP: POST /users/create'
+2025-06-06 19:33:22.966 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: An error occurred during registration.
+ ---> System.Exception: User creation failed. Errors: Passwords must have at least one non alphanumeric character.
+   at ApiLearning.Core.Services.AccountService.RegisterAsync(RegisterDto registerDto) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Core\Services\AccountService.cs:line 31
+   --- End of inner exception stack trace ---
+   at ApiLearning.Core.Services.AccountService.RegisterAsync(RegisterDto registerDto) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Core\Services\AccountService.cs:line 41
+   at ApiLearning.UseCases.Users.Create.CreateUserHandler.Handle(CreateUserCommand request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.UseCases\Users\Create\CreateUserHandler.cs:line 14
+   at Ardalis.SharedKernel.LoggingBehavior`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at ApiLearning.Web.Users.Create.HandleAsync(RegisterDto request, CancellationToken cancellationToken) in D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Web\Users\Create.cs:line 28
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at FastEndpoints.Endpoint`2.ExecAsync(CancellationToken ct)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at NSwag.AspNetCore.Middlewares.SwaggerUiIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.RedirectToIndexMiddleware.Invoke(HttpContext context)
+   at NSwag.AspNetCore.Middlewares.OpenApiDocumentMiddleware.Invoke(HttpContext context)
+   at Ardalis.ListStartupServices.ShowAllServicesMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-06 19:33:23.021 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:57678/users/create - 500 null text/plain; charset=utf-8 79084.512ms
+2025-06-06 19:33:46.566 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:57678/users/create - application/json 204
+2025-06-06 19:33:46.569 +05:30 [INF] Executing endpoint 'HTTP: POST /users/create'
+2025-06-06 19:33:48.275 +05:30 [INF] Handling CreateUserCommand
+2025-06-06 19:33:48.279 +05:30 [INF] Property _registerUserDto : {"FirstName":"FirstName","LastName":"LastName","Email":"Test@123","Password":"Password123","ConfirmPassword":"Password@123","PhoneNumber":"1234567890","Address":"123 Main St","$type":"RegisterDto"}
+2025-06-06 19:35:11.533 +05:30 [INF] Registered 6 endpoints in 526 milliseconds.
+2025-06-06 19:35:12.996 +05:30 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-06-06 19:35:13.070 +05:30 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-06-06 19:35:13.362 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Contributors] AS [c]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-06-06 19:35:13.398 +05:30 [INF] User profile is available. Using 'C:\Users\praveen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-06-06 19:35:13.555 +05:30 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-06-06 19:35:13.602 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger - null null
+2025-06-06 19:35:13.699 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-06 19:35:13.699 +05:30 [INF] Hosting environment: Development
+2025-06-06 19:35:13.699 +05:30 [INF] Content root path: D:\F\mine\gitgolder\ApiLearning\src\ApiLearning.Web
+2025-06-06 19:35:13.865 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/index.html - null null
+2025-06-06 19:35:13.879 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger - 302 null null 290.9089ms
+2025-06-06 19:35:13.977 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/index.html - 200 null text/html; charset=utf-8 111.9067ms
+2025-06-06 19:35:14.031 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - null null
+2025-06-06 19:35:14.044 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_framework/aspnetcore-browser-refresh.js - 200 16515 application/javascript; charset=utf-8 9.5279ms
+2025-06-06 19:35:14.112 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/_vs/browserLink - null null
+2025-06-06 19:35:14.153 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.4316ms
+2025-06-06 19:35:14.384 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - null null
+2025-06-06 19:35:14.424 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:57678/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 39.6329ms
+2025-06-06 19:35:22.036 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:57678/users/create - application/json 205
+2025-06-06 19:35:22.043 +05:30 [WRN] Failed to determine the https port for redirect.
+2025-06-06 19:35:22.048 +05:30 [INF] Executing endpoint 'HTTP: POST /users/create'
+2025-06-06 19:35:23.657 +05:30 [INF] Handling CreateUserCommand
+2025-06-06 19:35:23.659 +05:30 [INF] Property _registerUserDto : {"FirstName":"FirstName","LastName":"LastName","Email":"test@123","Password":"Password@123","ConfirmPassword":"Password@123","PhoneNumber":"1234567890","Address":"123 Main St","$type":"RegisterDto"}
+2025-06-06 19:35:25.531 +05:30 [INF] Executed DbCommand (135ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-06-06 19:35:25.685 +05:30 [INF] Executed DbCommand (19ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (DbType = Boolean), @p6='?' (DbType = DateTimeOffset), @p7='?' (Size = 256), @p8='?' (Size = 256), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Boolean), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2025-06-06 19:35:28.783 +05:30 [INF] Handled CreateUserCommand with Ardalis.Result.Result`1[ApiLearning.Core.AccountAggregate.UserDto] in 5122 ms
+2025-06-06 19:35:30.786 +05:30 [INF] Executed endpoint 'HTTP: POST /users/create'
+2025-06-06 19:35:30.790 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:57678/users/create - 200 null application/json; charset=utf-8 8753.8953ms

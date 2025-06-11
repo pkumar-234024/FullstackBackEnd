@@ -1,0 +1,30 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="CleanArchitecture.nuspec" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/ApiLearning.AspireHost/ApiLearning.AspireHost.csproj" />
+    <Project Path="src/ApiLearning.Core/ApiLearning.Core.csproj" />
+    <Project Path="src/ApiLearning.Infrastructure/ApiLearning.Infrastructure.csproj" />
+    <Project Path="src/ApiLearning.ServiceDefaults/ApiLearning.ServiceDefaults.csproj" />
+    <Project Path="src/ApiLearning.UseCases/ApiLearning.UseCases.csproj" />
+    <Project Path="src/ApiLearning.Web/ApiLearning.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/ApiLearning.FunctionalTests/ApiLearning.FunctionalTests.csproj">
+      <BuildDependency Project="src/ApiLearning.Web/ApiLearning.Web.csproj" />
+    </Project>
+    <Project Path="tests/ApiLearning.IntegrationTests/ApiLearning.IntegrationTests.csproj">
+      <BuildDependency Project="src/ApiLearning.Infrastructure/ApiLearning.Infrastructure.csproj" />
+    </Project>
+    <Project Path="tests/ApiLearning.UnitTests/ApiLearning.UnitTests.csproj" />
+  </Folder>
+</Solution>
