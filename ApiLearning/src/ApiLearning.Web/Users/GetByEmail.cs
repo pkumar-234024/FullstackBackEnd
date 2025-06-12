@@ -7,8 +7,8 @@ public class GetByEmail(IMediator _mediator) : Endpoint<UserByEmailDto, Result<U
 {
   public override void Configure()
   {
-    Post("/users/getUserByEmail");
-    AllowAnonymous();
+    Get("/users/getUserByEmail");
+    Roles("User", "Admin");
     Summary(s =>
     {
       s.Summary = "Get User.";

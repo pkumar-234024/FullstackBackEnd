@@ -94,7 +94,9 @@ public class AccountService : IAccountService
       {
         throw new Exception("Invalid email or password.");
       }
-      string token = await _tokenService.CreateTokenAsync(user.Id, user.UserName!, user.Email!);
+      var roles = await _userManager.GetRolesAsync(user);
+      var role = roles.FirstOrDefault() ?? "User"; // Default to User if no roles assigned  
+      string token = await _tokenService.CreateTokenAsync(user.Id, user.UserName!, user.Email!, role!);
       string refreshToken = await _tokenService.CreateRefreshTokenAsync(user.Id, user.UserName!, user.Email!);
       return new TokenResponse
       {

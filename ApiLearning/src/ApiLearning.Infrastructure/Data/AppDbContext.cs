@@ -9,7 +9,10 @@ public class AppDbContext(DbContextOptions<AppDbContext> options,
   private readonly IDomainEventDispatcher? _dispatcher = dispatcher;
 
   public DbSet<Contributor> Contributors => Set<Contributor>();
-
+  public DbSet<Clients> Clients => Set<Clients>();
+  public DbSet<Projects> Projects => Set<Projects>(); 
+  public DbSet<TasksItems> TasksItems => Set<TasksItems>();
+  public DbSet<TeamMember> TeamMember => Set<TeamMember>();
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     base.OnModelCreating(modelBuilder);

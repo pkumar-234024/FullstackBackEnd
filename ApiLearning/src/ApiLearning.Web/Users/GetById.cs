@@ -8,7 +8,7 @@ public class GetById(IMediator _mediator) :Endpoint<GetUserByIdDto, Result<UserD
 {
   public override void Configure()
   {
-    Post("/users/getUserById");
+    Get("/users/getUserById");
     AllowAnonymous();
     Summary(s =>
     {

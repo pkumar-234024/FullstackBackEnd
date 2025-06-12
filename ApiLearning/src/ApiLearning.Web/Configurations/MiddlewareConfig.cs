@@ -1,5 +1,6 @@
-﻿using Ardalis.ListStartupServices;
-using ApiLearning.Infrastructure.Data;
+﻿using ApiLearning.Infrastructure.Data;
+using Ardalis.ListStartupServices;
+using Microsoft.AspNetCore.Identity;
 
 namespace ApiLearning.Web.Configurations;
 
@@ -39,6 +40,18 @@ public static class MiddlewareConfig
       //          context.Database.Migrate();
       context.Database.EnsureCreated();
       await SeedData.InitializeAsync(context);
+
+      // Create roles if they do not exist
+      var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+      string[] roles = new[] { "Admin", "User", "SuperAdmin", "Guest", "ProjectManager" };
+
+      foreach (var role in roles)
+      {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+          await roleManager.CreateAsync(new IdentityRole(role));
+        }
+      }
     }
     catch (Exception ex)
     {
