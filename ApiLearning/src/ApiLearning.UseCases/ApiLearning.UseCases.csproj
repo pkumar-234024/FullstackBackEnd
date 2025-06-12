@@ -17,7 +17,6 @@
     <Folder Include="Accounts\Delete\" />
     <Folder Include="Accounts\List\" />
     <Folder Include="Accounts\Update\" />
-    <Folder Include="Users\" />
   </ItemGroup>
 
 </Project>

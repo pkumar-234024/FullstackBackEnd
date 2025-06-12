@@ -24,7 +24,10 @@ public class AccountService : IAccountService
       var user = new AppUser
       {
         UserName = registerDto.Email,
-        Email = registerDto.Email
+        Email = registerDto.Email,
+        FirstName = registerDto.FirstName,
+        LastName = registerDto.LastName,
+        Address = registerDto.Address,
       };
 
       var result = await _userManager.CreateAsync(user, registerDto.Password);
@@ -42,6 +45,8 @@ public class AccountService : IAccountService
 
       userDto.UserName = user.UserName;
       userDto.Email = user.Email;
+      userDto.FirtsName = user.FirstName;
+      userDto.LastName = user.LastName;
 
       return userDto;
     }

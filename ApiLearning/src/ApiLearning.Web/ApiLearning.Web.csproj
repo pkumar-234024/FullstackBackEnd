@@ -29,8 +29,4 @@
     <ProjectReference Include="..\ApiLearning.UseCases\ApiLearning.UseCases.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Users\" />
-  </ItemGroup>
-
 </Project>
