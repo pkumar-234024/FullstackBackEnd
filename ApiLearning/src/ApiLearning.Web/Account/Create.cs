@@ -2,13 +2,12 @@
 using ApiLearning.UseCases.Accounts.Create;
 using ApiLearning.UseCases.Contributors.Create;
 using ApiLearning.Web.Contributors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ApiLearning.Web.Account;
 
 public class Create(IMediator _mediator) : Endpoint<RegisterDto, UserDto>
 {
-
-
   public override void Configure()
   {
     Post("/users/create");

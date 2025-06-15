@@ -1,4 +1,5 @@
 ﻿using ApiLearning.Core.Interfaces;
+using ApiLearning.Core.Mapper;
 using ApiLearning.Core.Models;
 using ApiLearning.Core.Services;
 using ApiLearning.Infrastructure;
@@ -23,6 +24,8 @@ public static class ServiceConfigs
       services.AddScoped<ITokenService, TokenService>();
       services.AddScoped<IAccountService, AccountService>();
       services.AddScoped<IUserService, UserService>();
+      services.AddScoped<IProjectService, ProjectService>();
+      services.AddAutoMapper(typeof(MappingProfile));
       services.AddIdentity<AppUser, IdentityRole>(option =>
             {
               option.Password.RequireLowercase = true;
@@ -69,6 +72,8 @@ public static class ServiceConfigs
       services.AddScoped<IEmailSender, MimeKitEmailSender>();
       services.AddScoped<ITokenService, TokenService>();
       services.AddScoped<IAccountService, AccountService>();
+      services.AddScoped<IProjectService, ProjectService>();
+      services.AddAutoMapper(typeof(MappingProfile));
       services.AddIdentity<AppUser, IdentityRole>(option =>
       {
         option.Password.RequireLowercase = true;

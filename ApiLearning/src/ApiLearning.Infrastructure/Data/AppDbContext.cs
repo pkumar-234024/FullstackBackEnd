@@ -13,10 +13,15 @@ public class AppDbContext(DbContextOptions<AppDbContext> options,
   public DbSet<Projects> Projects => Set<Projects>(); 
   public DbSet<TasksItems> TasksItems => Set<TasksItems>();
   public DbSet<TeamMember> TeamMember => Set<TeamMember>();
+  public DbSet<AuditEntry> AuditEntry => Set<AuditEntry>();
+  public DbSet<AuditEntryDetail> AuditEntryDetail => Set<AuditEntryDetail>();
+
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     base.OnModelCreating(modelBuilder);
     modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+    modelBuilder.Entity<Projects>().HasIndex(p => p.Name).IsUnique();
   }
 
   public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

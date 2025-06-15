@@ -47,6 +47,7 @@ public class AccountService : IAccountService
       userDto.Email = user.Email;
       userDto.FirtsName = user.FirstName;
       userDto.LastName = user.LastName;
+      userDto.Id = user.Id;
 
       return userDto;
     }
